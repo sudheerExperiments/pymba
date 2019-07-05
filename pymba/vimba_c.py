@@ -18,22 +18,22 @@ if sys_plat == "win32":
 
         if not dlls:
             if 'VIMBA_HOME' in os.environ:
-                candidate = os.environ['VIMBA_HOME'] + r'\VimbaC\Bin\Win%i\VimbaC.dll' % (arch)
+                candidate = os.environ['VIMBA_HOME'] + r'\Tools\Viewer\Win%i\VimbaC.dll' % (arch)
                 if os.path.isfile(candidate):
                     dlls.append(candidate)
 
         if not dlls:
+            print("hello")
             bases = [
                 r'C:\Program Files\Allied Vision Technologies\AVTVimba_%i.%i\VimbaC\Bin\Win%i\VimbaC.dll',
                 r'C:\Program Files\Allied Vision\Vimba_%i.%i\Tools\Viewer\Win%i\VimbaC.dll'
             ]
             for base in bases:
-                for major in range(3):
+                for major in range(4):
                     for minor in range(10):
                         candidate = base % (major, minor, arch)
                         if os.path.isfile(candidate):
                             dlls.append(candidate)
-
         if not dlls:
             raise IOError("VimbaC.dll not found.")
 
