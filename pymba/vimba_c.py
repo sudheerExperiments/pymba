@@ -23,7 +23,6 @@ if sys_plat == "win32":
                     dlls.append(candidate)
 
         if not dlls:
-            print("hello")
             bases = [
                 r'C:\Program Files\Allied Vision Technologies\AVTVimba_%i.%i\VimbaC\Bin\Win%i\VimbaC.dll',
                 r'C:\Program Files\Allied Vision\Vimba_%i.%i\Tools\Viewer\Win%i\VimbaC.dll'
